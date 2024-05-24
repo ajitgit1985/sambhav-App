@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <style>
+      .agri {
+        background: rgb(6, 142, 35);
+        background: radial-gradient(
+          circle,
+          rgba(6, 142, 35, 1) 0%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+      .agri-btn {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(6, 142, 35, 1) 21%
+        );
+      }
+
+      .custom-card {
+        border-radius: 20px;
+        width: 436px !important;
+        background: #fbfffc;
+        height: 190px !important;
+        box-shadow: 4px 8px 30px #8585857a;
+      }
+      .custom-card-container {
+        width: 100%;
+        border: 1px solid #a0bb89;
+        border-radius: 20px;
+      }
+
+      .custom-card-body {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .custom-card-header {
+        display: flex;
+        background-color: rgb(241 255 228);
+        border-radius: 16px;
+        position: absolute;
+        width: 410px;
+        height: 78px;
+        margin: -35px 0;
+        border: 1px solid #a0bb89;
+      }
+
+      .custom-card-header-logo {
+        padding: 10px;
+        width: 25%;
+        display: flex;
+      }
+
+      .custom-card-logo {
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+        width: 55px;
+        height: 55px;
+      }
+
+      .custom-card-header-title {
+        width: 75%;
+      }
+
+      .custom-card-header-title-footer {
+        position: absolute;
+        bottom: 0;
+        width: 75%;
+        display: flex;
+        justify-content: end;
+      }
+
+      .custom-card-header-title-footer .custom-card-header-title-date {
+        color: #fff;
+        padding-right: 10px;
+        text-align: right;
+        width: 65%;
+        border-bottom-right-radius: 10px;
+      }
+
+      .custom-card-title {
+        background-color: black;
+        border-radius: 25px;
+      }
+
+      .custom-card-content {
+        padding: 24px 15px;
+        margin-top: 45px;
+        width: 100%;
+      }
+
+      .custom-card-content-values {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .custom-card-content-values label {
+        font-weight: 700;
+      }
+
+      .custom-card-content-values .kpi-Values {
+        color: green;
+        font-weight: 700;
+      }
+
+      .custom-card-bg {
+        margin: -45px -10px;
+        width: 230px;
+        height: 220px;
+        position: absolute;
+        background-color: #a0bb89;
+        z-index: -1;
+        border-radius: 30px;
+      }
+      .custom-card-body-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 30px;
+        border: 1px solid #d9ebc9;
+        background-color: rgb(241 255 228);
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+      }
+
+      .custom-card-body-footer .granularity-label {
+        display: flex;
+        align-items: center;
+        height: 30px;
+        border-bottom-left-radius: 20px;
+        color: black;
+        font-weight: 600;
+        margin-left: 20px;
+      }
+      .custom-card-body-footer .granularity-view-btn {
+        display: flex;
+        align-items: center;
+        border-bottom-right-radius: 20px;
+        color: #fbfffc;
+        width: 90px;
+        height: 30px;
+        padding-left: 35px;
+        text-align: right;
+        font-weight: 600;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(4, 106, 16, 1) 26%
+        );
+      }
+      .custom-card-header-title-date {
+        font-size: 14px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(4, 106, 16, 1) 45%
+        );
+      }
+
+      .custom-card-text {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .imgt {
+        margin: 70px 100px;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid item">
+      <div class="imgt">
+        <div class="custom-card" style="width: 18rem">
+          <div class="custom-card-bg"></div>
+          <div class="custom-card-container">
+            <div class="custom-card-body">
+              <div class="custom-card-header">
+                <div class="custom-card-header-logo">
+                  <img
+                    class="custom-card-logo"
+                    src="C:\Users\JKJ61\OneDrive\Desktop\prayas\Current\public\images\70014_1.png"
+                    alt=""
+                  />
+                </div>
+                <div class="custom-card-header-title">
+                  <span class="custom-card-text"
+                    >Agri Clinics and Agri Business Scheme</span
+                  >
+                  <div class="custom-card-header-title-footer">
+                    <span class="custom-card-header-title-date"
+                      >As on July-2023</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="custom-card-content">
+                <div class="custom-card-content-values">
+                  <h5 class="custom-card-text">Trained Candidates</h5>
+                  <h4 class="kpi-Values">29,202</h4>
+                </div>
+                <div class="custom-card-content-values">
+                  <h5 class="custom-card-text">Agriventures Established</h5>
+                  <h4 class="kpi-Values">9,522</h4>
+                </div>
+              </div>
+            </div>
+            <div class="custom-card-body-footer">
+              <span class="granularity-label">-- | C | M</span>
+              <span class="granularity-view-btn agri-btn">View</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

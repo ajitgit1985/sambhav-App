@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: backend
+    build: ./Sambhav-Node-api/node-postgres/backend
+    ports:
+      - "3001:3001"
+
+  frontend:
+    container_name: frontend
+    build: ./Sambhav-React-App
+    ports:
+      - "3000:3000"
+
+  nginx:
+    container_name: nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+      - frontend
+
