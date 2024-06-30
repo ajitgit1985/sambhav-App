@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      run: |
+        git clone --depth 1 https://github.com/Rahul7600/sambhav-App.git .
+        git config --global user.name "rahul"
+        git config --global user.email "rahu@gmail.com"
       
     - name: Build, Push, and Deploy to EC2
       uses: appleboy/ssh-action@master
