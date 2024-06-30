@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted   # Indicates the job runs on your self-hosted runner
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
       
     # - name: Change directory to application path
     #   run: cd /home/ubuntu/sambhav-App
