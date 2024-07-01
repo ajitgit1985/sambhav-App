@@ -1,4 +1,4 @@
-name: CI
+name: Deploy to EC2
 
 on:
   push:
@@ -6,24 +6,34 @@ on:
       - master
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Navigate to project directory
-        run: cd /home/ubuntu/sambhav-App
-
-      - name: Build Docker images
+      - name: Install ssh-agent
         run: |
-          docker-compose build
-          # Add additional build steps if necessary
+          eval $(ssh-agent -s)
+          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan -t rsa ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+      
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.EC2_SSH_PORT }}
+          script: |
+            cd /home/ubuntu/sambhav-App
+            docker-compose build
+            docker-compose up -d
 
-      - name: Push Docker images (if needed)
-        run: |
-          docker-compose push
-          # Add additional push steps if necessary
 
 
 
