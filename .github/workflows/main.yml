@@ -8,20 +8,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install ssh-agent
+        # Set up Git credentials securely
+      - name: Set up Git credentials
         run: |
-          eval $(ssh-agent -s)
-          ssh-add <(echo "${{ secrets.SSH_PRIVATE_KEY }}")
-          mkdir -p ~/.ssh
-          chmod 700 ~/.ssh
-          ssh-keyscan -t rsa ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-      
+          git config --global credential.helper store
+          echo "https://${{ secrets.GITHUB_USERNAME }}:${{ secrets.GITHUB_TOKEN }}@github.com" > ~/.git-credentials
+
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
