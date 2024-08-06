@@ -18,7 +18,7 @@ jobs:
           # Navigate to the application directory
           cd /home/ubuntu/sambhav-App
 
-          # Build the Docker containers from the Dockerfile(s)
+          # Build the Docker containers from the Dockerfile
           docker-compose build
 
           # Optional: Start the containers
