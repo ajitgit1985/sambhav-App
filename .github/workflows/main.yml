@@ -16,7 +16,7 @@ jobs:
       - name: Build Docker containers
         run: |
           # Navigate to the application directory
-          cd /home/ubuntu/sambhav-App
+          cd /home/sambhav/sambhav-App
 
           # Build the Docker containers from the Dockerfile
           docker-compose build
